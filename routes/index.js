@@ -7,7 +7,10 @@ import {
     getTopicsByCategory,
     getTopicById,
     createTopic,
+    updateTopicById,
+    deleteTopicById,
 } from "../models/models.js"
+
 
 // //We have to write our CRUD routes 
 
@@ -33,4 +36,17 @@ router.get("/:id", async function (req, res){
       const result = await createTopic(req.body)
       res.json({ success: true, payload: result });
   } )
+  
+  //update
+    router.patch("/:id", async function (req, res){
+      const result = await updateTopicById(req.params.id, req.body)
+      res.json({ success: true, payload: result });
+  })
+
+  //delete
+
+  router.delete("/:id", async function (req,res) {
+    const result = await deleteTopicById (req.params.id);
+    res.json({ success: true, payload: result });
+  })
   

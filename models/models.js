@@ -26,3 +26,15 @@ export async function getTopicById(id){
    return newTopic.rows
 }
 
+// Update
+
+ export async function updateTopicById (id,updatedTopic) {
+    const update = await query  ('UPDATE topics SET  (topic, text_link, video_link, interactive_link) = ($1, $2, $3, $4) WHERE topic_id = $5 RETURNING * ', [updatedTopic.topic,updatedTopic.text_link,updatedTopic.video_link,updatedTopic.interactive_link,id]);
+    return update.rows
+}
+
+//Delete Topic 
+export async function deleteTopicById(id){
+    const deleteTopic = await query("DELETE FROM topics WHERE topic_id = $1  RETURNING * ", [id])
+    return deleteTopic.rows[0]
+}
