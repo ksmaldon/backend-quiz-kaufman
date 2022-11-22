@@ -22,7 +22,7 @@ export async function getTopicById(id){
 
  // createThing
  export async function createTopic(topics){
-    const newTopic = await query("INSERT INTO topics (thing, category) VALUES ($1, $2, $3, $4) RETURNING *", [topics.topic, topics.text_link, topics.video_link, topics.interactive_link])
+    const newTopic = await query("INSERT INTO topics (topic, text_link, video_link, interactive_link) VALUES ($1, $2, $3, $4) RETURNING *", [topics.topic, topics.text_link, topics.video_link, topics.interactive_link])
    return newTopic.rows
 }
 
