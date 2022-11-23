@@ -1,6 +1,14 @@
 import query from "../db/index.js"
 
 
+//FROM questions WHERE question_id = $1"
+
+// export async function getQuestionsByTopic(topic_id)
+// SELECT q.*, t.text_link, t.video_link, t.interactive_link FROM questions q
+// INNER JOIN Topics t on t.topic_id = q.topic_id
+// where question_id = $1
+
+return 
 export async function getAllQuestions(){
     const allQuestions = await query("SELECT * FROM questions")
     return allQuestions.rows
@@ -8,8 +16,7 @@ export async function getAllQuestions(){
 
 //search by question topic
 export async function getQuestionsByTopic(topic_id){
-    const result = await query("SELECT * FROM questions WHERE question_id = $1", [`%${topic_id}%`])
-    
+    const result = await query("SELECT q.*, t.text_link, t.video_link, t.interactive_link FROM questions q INNER JOIN Topics t on t.topic_id = q.question_id where  q.question_id = $1," [`%${topic_id}%`])
     return result.rows
 }
 
