@@ -8,7 +8,7 @@ import query from "../db/index.js"
 // INNER JOIN Topics t on t.topic_id = q.topic_id
 // where question_id = $1
 
-return 
+//return 
 export async function getAllQuestions(){
     const allQuestions = await query("SELECT * FROM questions")
     return allQuestions.rows
