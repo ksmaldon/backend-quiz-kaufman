@@ -10,7 +10,7 @@ import query from "../db/index.js"
 
 //return 
 export async function getAllQuestions(){
-    const allQuestions = await query("SELECT * FROM questions")
+    const allQuestions = await query("SELECT * FROM questions inner join topics on questions.topic_id = topics.topic_id")
     return allQuestions.rows
 }
 
