@@ -36,7 +36,7 @@ export async function getQuestionById(id){
 // Update question by id
 
  export async function updateQuestionById (id,updatedQuestion) {
-    const update = await query  ('UPDATE questions SET  (question, answer, topic_id) = ($1, $2, $3,) WHERE question_id = $4 RETURNING * ', [updatedQuestion.question, updatedQuestion.answer, updatedQuestion.topic_id]);
+    const update = await query  ('UPDATE questions SET question = $1, answer = $2 WHERE question_id = $3', [updatedQuestion.question, updatedQuestion.answer, id]);
     return update.rows
 }
 
