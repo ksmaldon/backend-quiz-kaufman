@@ -51,4 +51,4 @@ topicsRouter.get("/", async function (req, res) {
   })
   
 
-  export default topicsRouter
+  export default topicsRouter 
