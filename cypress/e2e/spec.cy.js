@@ -50,10 +50,17 @@ describe('testing checkbox', () => {
    // cy.get('input[id="HTML_CSS"]').first().check()
    // cy.get('input[id="SQL"]').first().check()
    // cy.get('input[id="JS"]').first().check()
-    cy.get('#crud-btn-container').click()
+    //cy.get('#crud-btn-container').click() it works 
    // cy.get('button[class="hidden"]').click() doesnt have a class so can't work
+   cy.get('#question-display > :nth-child(1) > :nth-child(6)').click({force: true})
+   //cy.get('#question-display > :nth-child(1) > :nth-child(6)').click({force: true})
+   //cy.get(':nth-child(1) > .resource-button-container > [href="https://www.w3schools.com/REACT/DEFAULT.ASP"] > .resource-button').click({force: true})
+   //cy.get(':nth-child(1) > .resource-button-container > [href="https://www.youtube.com/watch?v=hQAHSlTtcmY&ab_channel=WebDevSimplified"] > .resource-button').click({force: true})
+   //cy.get(':nth-child(1) > .resource-button-container > [href="https://www.freecodecamp.org/news/tag/react/"] > .resource-button').click({force: true}) LINKS WORK
   })
 })
+
+
 
 
 
