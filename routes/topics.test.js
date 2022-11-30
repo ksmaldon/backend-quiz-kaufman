@@ -25,20 +25,7 @@ test('responds to get request for all topics ', async() => {
         })
        }
 })
-// test('get request for a user using a non-existing username', async() => {
-//     const response = await supertest(app).get('/users?username=jackma')
-//     expect(response.status).toBe(200);
-//     expect(response.body.success).toBeFalsy;
-//     expect(typeof response.body.payload).toBeUndefined;
-// })
 
-// check get request for a user by id
-// test('get request for a user by id', async() => {
-//     const response = await supertest(app).get('/users/125')
-//     expect(response.status).toBe(200);
-//     expect(response.body.success).toBeTruthy;
-//     expect(response.body.payload.id).toBe(125);
-// })
 
 
 // check post user reqest
@@ -66,15 +53,3 @@ test('post topic request', async() => {
       
     })
 
-// check delete topic by id request
-// test(`delete topic by id request`, async() => {
-//     const idToDelete = 1
-//     const url = `/api/topics/${idToDelete}`
-//     const response = await supertest(app).delete(url)
-
-//     expect(response.status).toBe(200)
-//     expect(response.body).toStrictEqual({
-//         success: true,
-//         payload: idToDelete         
-//         })
-//     })
