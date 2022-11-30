@@ -19,3 +19,5 @@ app.use("/api/questions", questionsRouter)
 app.listen(PORT, function () {
   console.log(`Server is running on port ${PORT}`);
 });
+
+export default app;
