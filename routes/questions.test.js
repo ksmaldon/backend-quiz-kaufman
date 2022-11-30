@@ -4,7 +4,7 @@ import { expect, test} from '@jest/globals';
 
 test('responds to get request for all questions ', async() => {
     //check the structure of the response.body
-    const response = await supertest(app).get('/api/questions');
+    const response = await supertest(app).get('/api/questions/');
      expect(response.status).toBe(200);
      expect(response.body).toStrictEqual({
       success: true,
@@ -24,8 +24,8 @@ test('responds to get request for all questions ', async() => {
           text_link: expect.any(String),
           video_link: expect.any(String),
           wrong_answer1: expect.any(String),
-          wrong_answer2: expect.any(String),
-          wrong_answer3: expect.any(String)
+          wrong_answer2: expect.any(String || null),
+          wrong_answer3: expect.any(String || null)
                  
         })
        }
