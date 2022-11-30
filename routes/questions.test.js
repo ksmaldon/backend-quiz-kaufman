@@ -11,16 +11,22 @@ test('responds to get request for all questions ', async() => {
       payload: expect.any(Array),
      });
          //check the structure of payload
-    // for(let i = 0; i<4; i++) {
-    //     const userObj = response.body.payload[i];
+    for(let i = 0; i<response.body.payload.length; i++) {
+        const userObj = response.body.payload[i];
     
-    //     expect(userObj).toStrictEqual({
-    //       topic_id: expect.any(Number),
-    //       topic: expect.any(String),
-    //       text_link: expect.any(String),
-    //       video_link: expect.any(String),
-    //       interactive_link: expect.any(String)
-        
-    //     })
-    //    }
+        expect(userObj).toStrictEqual({
+          question_id: expect.any(Number),
+          answer: expect.any(String),
+          question: expect.any(String),
+          topic: expect.any(String),
+          topic_id: expect.any(Number),
+          interactive_link: expect.any(String),
+          text_link: expect.any(String),
+          video_link: expect.any(String),
+          wrong_answer1: expect.any(String),
+          wrong_answer2: expect.any(String),
+          wrong_answer3: expect.any(String)
+                 
+        })
+       }
 })

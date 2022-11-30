@@ -3,7 +3,7 @@ import app from '../app.js'
 import { expect, test} from '@jest/globals';
 
 
-test.skip('responds to get request for all topics ', async() => {
+test('responds to get request for all topics ', async() => {
     //check the structure of the response.body
     const response = await supertest(app).get('/api/topics');
      expect(response.status).toBe(200);
@@ -42,7 +42,7 @@ test.skip('responds to get request for all topics ', async() => {
 
 
 // check post user reqest
-test.skip('post topic request', async() => {
+test('post topic request', async() => {
     const payload = {topic_id: 1,
     "topic": "React",
     "text_link": "https://www.w3schools.com/REACT/DEFAULT.ASP",

@@ -16,8 +16,5 @@ app.use(express.json());
 app.use("/api/topics", topicsRouter)
 app.use("/api/questions", questionsRouter)
 
-app.listen(PORT, function () {
-  console.log(`Server is running on port ${PORT}`);
-});
 
 export default app;
