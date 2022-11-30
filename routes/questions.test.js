@@ -4,11 +4,11 @@ import { expect, test} from '@jest/globals';
 
 test('responds to get request for all questions ', async() => {
     //check the structure of the response.body
-    const response = await supertest(app).get('/api/questions/');
+    const response = await supertest(app).get('/api/questions/2');
      expect(response.status).toBe(200);
      expect(response.body).toStrictEqual({
       success: true,
-      payload: expect.any(Array),
+      payload: expect.any(Object),
      });
          //check the structure of payload
     for(let i = 0; i<response.body.payload.length; i++) {
